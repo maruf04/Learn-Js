@@ -1,0 +1,21 @@
+//filtreleri temizleme
+html
+
+
+<form id="filterForm">
+</form>
+
+<div class="row pt-2">
+          <div class="col">
+            <button type="button" id="btnDeleteFilters" style="float: right;" class="btnGetResults">
+              Filtreleri Temizle
+            </button>
+          </div>
+   </div>
+
+js kısmı
+
+ $("#btnDeleteFilters").click(function () {
+        document.getElementById("filterForm").reset();//bunun bir formun id si olması gerekiyor
+        $("#market-table tbody").empty();
+ })
