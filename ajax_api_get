@@ -1,0 +1,25 @@
+const getCategories = () => {
+        $.ajax({
+            url: "https://marketapi-bfltu.ondigitalocean.app/listproductcategory/",
+            type: 'GET',
+            dataType: 'json', // added data type
+            success: function (response) {
+                $.each(response, function (k, v) {
+                    let options = `
+                    <option value="${v.id}">${v.product_category+" ("+marketDon(v.market_id)+")" }</option>`
+                    $("#categories").append(options);
+                })
+            }
+        });
+    }
+    getCategories();
+    $('#categories').select2({
+        language: {
+            noResults: function (params) {
+                return "Kategori Bulunamadı!";
+            },
+        },
+
+        placeholder: "Seçiniz",
+
+    });
