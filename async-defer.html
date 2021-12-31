@@ -1,0 +1,17 @@
+//detaylı bu linkten inceleyebilirsin
+//https://javascript.info/script-async-defer
+
+
+//örnek bir js dosyasında defer kullanmak
+<script src="./js/app.js" async defer></script>
+
+//defer ile o dosya tam oluşturuluncaya kadar beklemesini sağlar
+
+<p>...content before scripts...</p>
+<script>
+  document.addEventListener('DOMContentLoaded', () => alert("DOM ready after defer!"));
+</script>
+<script defer src="https://javascript.info/article/script-async-defer/long.js?speed=1"></script>
+<p>...content after scripts...</p>
+//Sayfa içeriği hemen görünür.
+//DOMContentLoadedolay işleyicisi ertelenmiş komut dosyasını bekler. Yalnızca komut dosyası indirilip yürütüldüğünde tetiklenir.
