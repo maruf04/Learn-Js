@@ -1,4 +1,4 @@
-# javascript-jquery
+# javascript
 
 <h1> My Js Notebook </h1>
 
